@@ -1,3 +1,21 @@
-<p>
-widget-details works!
-</p>
+<mat-card>
+  <mat-card-title>
+    <span *ngIf="currentWidget.id == null; else editTitle">
+      Select widget
+    </span>
+    <ng-template #editTitle>
+      Edit Widgets {{ currentWidget?.title }}</ng-template
+    >
+  </mat-card-title>
+  <mat-card-content>
+    {{ currentWidget?.title }}
+
+    <form #wForm="ngForm">
+      <mat-form-field>
+        <input matInput [(ngModel)]="currentWidget.title" name="title" />
+      </mat-form-field>
+    </form>
+
+    <button mat-button color="primary">Save</button>
+  </mat-card-content>
+</mat-card>

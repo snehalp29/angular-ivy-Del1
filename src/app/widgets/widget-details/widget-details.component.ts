@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Widget } from '../../app-interfaces';
 
 @Component({
@@ -8,6 +8,11 @@ import { Widget } from '../../app-interfaces';
 })
 export class WidgetDetailsComponent implements OnInit {
   currentWidget: Widget;
+  originalTitle: string;
+
+  @Input() set widget(val: Widget) {
+    this.currentWidget = { ...val };
+  }
 
   constructor() {}
 
