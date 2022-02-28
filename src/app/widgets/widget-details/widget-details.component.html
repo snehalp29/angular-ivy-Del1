@@ -8,14 +8,41 @@
     >
   </mat-card-title>
   <mat-card-content>
-    {{ currentWidget?.title }}
+      <form #wForm="ngForm">
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          [(ngModel)]="currentWidget.title"
+          placeholder="Title"
+          type="text"
+          required
+          name="title"
+        />
+      </mat-form-field>
 
-    <form #wForm="ngForm">
+      <mat-form-field class="full-width">
+        <input
+          matInput
+          name="description"
+          [(ngModel)]="currentWidget.description"
+          placeholder="Description"
+          required
+        />
+      </mat-form-field>
+
       <mat-form-field>
-        <input matInput [(ngModel)]="currentWidget.title" name="title" />
+        <input
+          matInput
+          [(ngModel)]="currentWidget.email"
+          placeholder="Email"
+          type="email"
+          required
+          name="title"
+        />
       </mat-form-field>
     </form>
 
-    <button mat-button color="primary">Save</button>
+    <button mat-button color="primary" [disabled]="wForm.invalid">Save</button>
   </mat-card-content>
 </mat-card>
+<!-- {{ wForm | json }} -->
