@@ -1,2 +1,5 @@
-widget works! <app-widgets-list></app-widgets-list>
+<app-widgets-list
+  [widgets]="widgets$"
+  (selected)="onSelected($event)"
+></app-widgets-list>
 <app-widget-details></app-widget-details>
