@@ -15,14 +15,20 @@ export class WidgetsService {
       id: '2',
       title: 'title_2',
       description: 'desc_2',
-      email: 'email_1@p.com',
+      email: 'email_2@p.com',
     },
-    {
-      id: '3',
-      title: 'title_3',
-      description: 'desc_3',
-      email: 'email_1@p.com',
-    },
+    // {
+    //   id: '3',
+    //   title: 'title_3',
+    //   description: 'desc_3',
+    //   email: 'email_3@p.com',
+    // },
+    // {
+    //   id: '4',
+    //   title: 'title_4',
+    //   description: 'desc_4',
+    //   email: 'email_4@p.com',
+    // },
   ];
 
   constructor() {}

@@ -17,11 +17,45 @@ export class WidgetsComponent implements OnInit {
 
   ngOnInit() {
     debugger;
-    this.loadData();
+    this.loadWidgets();
   }
 
-  loadData() {
+  loadWidgets() {
     this.widgets$ = this.widgetService.findAll();
+  }
+
+  saveWidget(widget: Widget) {
+    console.log(widget);
+    if (widget.id) {
+      this.updateWidget(widget);
+    } else {
+      this.createWidget(widget);
+    }
+  }
+
+  reset() {
+    this.loadWidgets();
+    this.selectWidget(null);
+  }
+
+  resetForm() {
+    this.selectWidget(null);
+  }
+
+  selectWidget(widget: Widget) {
+    this.widgetService.findOne(widget?.id);
+  }
+
+  createWidget(widget: Widget) {
+    this.widgetService.create(widget);
+  }
+
+  updateWidget(widget: Widget) {
+    this.widgetService.update(widget, widget.id);
+  }
+
+  deleteWidget(widget: Widget) {
+    //  this.widgetService.delete(widget);
   }
 
   onSelected(widget: Widget) {
