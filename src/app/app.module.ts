@@ -7,9 +7,10 @@ import { HelloComponent } from './hello.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
 import { WidgetDetailsComponent } from './widgets/widget-details/widget-details.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, MaterialModule],
   declarations: [
     AppComponent,
     HelloComponent,
