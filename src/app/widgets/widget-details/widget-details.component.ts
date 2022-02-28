@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Widget } from '../../app-interfaces';
 
 @Component({
@@ -13,6 +13,9 @@ export class WidgetDetailsComponent implements OnInit {
   @Input() set widget(val: Widget) {
     this.currentWidget = { ...val };
   }
+
+  @Output() saved = new EventEmitter<Widget>();
+  @Output() canceled = new EventEmitter();
 
   constructor() {}
 
