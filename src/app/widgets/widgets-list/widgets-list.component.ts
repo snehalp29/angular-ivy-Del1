@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Widget } from '../../app-interfaces';
 
 @Component({
   selector: 'app-widgets-list',
   templateUrl: './widgets-list.component.html',
-  styleUrls: ['./widgets-list.component.css']
+  styleUrls: ['./widgets-list.component.css'],
 })
 export class WidgetsListComponent implements OnInit {
+  @Input() widgets: Widget[];
 
-  constructor() { }
+  @Output() selected = new EventEmitter<Widget>();
+  @Output() deleted = new EventEmitter<Widget>();
 
-  ngOnInit() {
+  constructor() {}
+
+  ngOnInit() {}
+
+  selectWidget(widget: Widget) {
+    this.selected.emit(widget);
   }
 
+  deleteWidget(widget: Widget) {
+    this.deleted.emit(widget);
+  }
 }
