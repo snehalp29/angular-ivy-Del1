@@ -16,7 +16,6 @@ export class WidgetsComponent implements OnInit {
   constructor(private widgetService: WidgetsService) {}
 
   ngOnInit() {
-    debugger;
     this.loadWidgets();
   }
 

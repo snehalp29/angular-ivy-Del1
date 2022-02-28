@@ -42,10 +42,7 @@ export class WidgetsService {
   }
 
   create(widget: Widget) {
-    // debugger;
     
-
-
     if (this.widgets.find((w) => w.email === widget.email)) {
       throw 'email exists';
     } else {
