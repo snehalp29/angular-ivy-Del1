@@ -25,7 +25,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   saveWidget(widget: Widget) {
-    console.log(widget);
+    console.log('saveWidget', widget);
     if (widget.id) {
       this.updateWidget(widget);
     } else {

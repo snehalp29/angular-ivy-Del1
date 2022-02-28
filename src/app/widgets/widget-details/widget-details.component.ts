@@ -19,5 +19,9 @@ export class WidgetDetailsComponent implements OnInit {
 
   constructor() {}
 
+  SubmitWidget(widget: Widget) {
+    // console.log('SubmitWidget', widget);
+    this.saved.emit(widget);
+  }
   ngOnInit() {}
 }

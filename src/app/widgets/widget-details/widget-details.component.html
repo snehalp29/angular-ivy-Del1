@@ -8,7 +8,7 @@
     >
   </mat-card-title>
   <mat-card-content>
-    <form #wForm="ngForm" (submit)="saved.emit(currentWidget)">
+    <form #wForm="ngForm" (submit)="SubmitWidget(currentWidget)">
       <mat-form-field class="full-width">
         <input
           matInput
@@ -37,21 +37,27 @@
           placeholder="Email"
           type="email"
           required
-          name="title"
+          name="email"
         />
       </mat-form-field>
-    </form>
 
-    <button mat-button color="primary" type="submit" [disabled]="wForm.invalid">
-      Save
-    </button>
-    <button
-      mat-button
-      color="secondary"
-      (click)="wForm.reset(); canceled.emit()"
-    >
-      Cancel
-    </button>
+      <button
+        mat-button
+        color="primary"
+        type="submit"
+        [disabled]="wForm.invalid"
+      >
+        Save
+      </button>
+      <button
+        mat-button
+        type="reset"
+        color="secondary"
+        (click)="wForm.reset(); canceled.emit()"
+      >
+        Cancel
+      </button>
+    </form>
   </mat-card-content>
 </mat-card>
 <!-- {{ wForm | json }} -->
