@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Widget } from '../app-interfaces';
+import { WidgetsService } from './widgets.service';
 
 @Component({
   selector: 'app-widgets',
@@ -7,15 +9,20 @@ import { Widget } from '../app-interfaces';
   styleUrls: ['./widgets.component.css'],
 })
 export class WidgetsComponent implements OnInit {
-  widgets$: Widget[] = [
-    
-  ];
+  widgets$: Observable<Widget[]>;
 
   selectedWidget$: Widget;
 
-  constructor() {}
+  constructor(private widgetService: WidgetsService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    debugger;
+    this.loadData();
+  }
+
+  loadData() {
+    this.widgets$ = this.widgetService.findAll();
+  }
 
   onSelected(widget: Widget) {
     this.selectedWidget$ = widget;

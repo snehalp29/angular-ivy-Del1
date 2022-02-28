@@ -1,5 +1,5 @@
 <app-widgets-list
-  [widgets]="widgets$"
+  [widgets]="widgets$ | async"
   (selected)="onSelected($event)"
 ></app-widgets-list>
 <app-widget-details [widget]="selectedWidget$"></app-widget-details>
