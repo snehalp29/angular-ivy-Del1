@@ -42,8 +42,8 @@ export class WidgetsService {
   }
 
   create(widget: Widget) {
-    
-    if (this.widgets.find((w) => w.email === widget.email)) {
+    let existingWidget = this.widgets.find((w) => w.email === widget.email);
+    if (!!existingWidget) {
       throw 'email exists';
     } else {
       this.widgets.push(widget);
